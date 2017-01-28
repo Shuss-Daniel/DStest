@@ -5,10 +5,29 @@
  */
 package byui.cit260.dsTest.model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author DS
  */
-public class NPC {
+public class NPC implements Serializable{
+
+    public NPC() {
+    }
+
+// class instance variables
+  
+// default constructor
+    
+// Getters and Setters
+
+// Inserted the f lines of toString() code below    
+    @Override
+    public String toString() {
+        return "NPC{" + '}';
+    }
+
+    
     
 }

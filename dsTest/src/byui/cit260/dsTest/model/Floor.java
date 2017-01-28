@@ -5,11 +5,14 @@
  */
 package byui.cit260.dsTest.model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author DS
  */
-public class Floor {
+public class Floor implements Serializable{
+    
 // class instance variables
     private boolean roomNumber;
  
@@ -24,6 +27,36 @@ public class Floor {
 
     public void setRoomNumber(boolean roomNumber) {
         this.roomNumber = roomNumber;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 59 * hash + (this.roomNumber ? 1 : 0);
+        return hash;
+    }
+
+    @Override
+    public String toString() {
+        return "Floor{" + "roomNumber=" + roomNumber + '}';
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Floor other = (Floor) obj;
+        if (this.roomNumber != other.roomNumber) {
+            return false;
+        }
+        return true;
     }
     
 }

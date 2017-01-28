@@ -20,10 +20,16 @@ public class DsTest {
         // TODO code application logic here
         Room room1 = new Room();
         savePlayer player1 = new savePlayer();
+        GateKeeper gateKeeper = new GateKeeper();
+        Floor floor3 = new Floor();
         player1.setName("BillyBob");
         player1.setScore(7);
+        gateKeeper.setHasSolved(true);
+        floor3.setRoomNumber(true);
         String playerInfo = player1.toString();
         System.out.println(playerInfo);
+                
+        
     }
     
 }

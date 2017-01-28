@@ -5,11 +5,13 @@
  */
 package byui.cit260.dsTest.model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author DS
  */
-public class GateKeeper {
+public class GateKeeper implements Serializable{
     
 // class instance variables
     private boolean hasSolved;
@@ -26,6 +28,36 @@ public class GateKeeper {
 
     public void setHasSolved(boolean hasSolved) {
         this.hasSolved = hasSolved;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 53 * hash + (this.hasSolved ? 1 : 0);
+        return hash;
+    }
+
+    @Override
+    public String toString() {
+        return "GateKeeper{" + "hasSolved=" + hasSolved + '}';
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final GateKeeper other = (GateKeeper) obj;
+        if (this.hasSolved != other.hasSolved) {
+            return false;
+        }
+        return true;
     }
     
 }
